@@ -9,19 +9,19 @@ import {
 
 const stringsRouter = express.Router();
 
-// GET /strings/filter-by-natural-language - Natural Language Filtering
+// ✅ GET /strings/filter-by-natural-language
 stringsRouter.get('/filter-by-natural-language', filterByNaturalLanguage);
 
-// POST /strings - Create/Analyze String
-stringsRouter.post('/', createString);
-
-// GET /strings/:string_value - Get Specific String
-stringsRouter.get('/:string', getString);
-
-// GET /strings - Get All Strings with Filtering
+// ✅ GET /strings - All strings + query filters
 stringsRouter.get('/', fetchAllStrings);
 
-// DELETE /strings/:string_value - Delete String
+// ✅ POST /strings
+stringsRouter.post('/', createString);
+
+// ✅ GET /strings/:string_value
+stringsRouter.get('/:string', getString);
+
+// ✅ DELETE /strings/:string_value
 stringsRouter.delete('/:string', removeString);
 
 export default stringsRouter;
